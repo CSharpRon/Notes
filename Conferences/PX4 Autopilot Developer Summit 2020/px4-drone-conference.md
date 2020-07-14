@@ -1,5 +1,5 @@
 ---
-title: "PX4 Autopilot Developer Summit"
+title: "Day 1 Talks"
 date: 2020-07-06
 keywords:
   - Drone
