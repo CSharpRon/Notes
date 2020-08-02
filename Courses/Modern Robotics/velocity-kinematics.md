@@ -63,17 +63,17 @@ $$
 
 The joint velocities are typically graphed in a 2D grid, where the possible joint velocities are represented as a square in the $\dot{\theta_1}-\dot{\theta_2}$ space. 
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/joint-velocities.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/joint-velocities.png)
 
 This set of values can then be passed to the Jacobian to return the parallelogram of **possible end-effector velocities.** :
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/end-effector-velocities.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/end-effector-velocities.png)
 
-Note: Typically, the joint velocities are shown as a sphere. When they are, an ellipsoid appears to show the end-effector velocities instead of a parallelogram.
+
 
 - These ellipses are called **Manipulability Ellipsoids**
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/manipulability-ellipsoid.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/manipulability-ellipsoid.png)
 
 ## Force Ellipsoids - Joint Torques
 
@@ -117,7 +117,7 @@ $$
 
 Since the space jacobian is dependend on joints and angle rotations, we can derive the following example for a RRRP robot:
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/RRRP.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/RRRP.png)
 
 Since the Jacobian is a matrix, we will need to fill in every ith column:
 
@@ -129,13 +129,13 @@ Since the Jacobian is a matrix, we will need to fill in every ith column:
 
 - The direction of $\omega_{s3}$ is always fixed in the $\hat{z}_s$ direction regardless of the values of $\theta_1$ and $\theta_2$, so $\omega_{s3} = (0,0,1).$ Choosing $q_3 = (L_1c_1 + L_2c_{12},L_1s_1 + L_2s_{12},0),$ where $c_{12} = cos(\theta_1 + \theta_2), s_{12} = sin(\theta_1 + \theta_2)$, it followsthat $v_{s3} = (L_1s_1 + L_2s_{12}, -L_1c_1 - L_2c_{12}, 0).$
 
-- ![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/space-jacobian.png)
+- ![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/space-jacobian.png)
 
 ## Body Jacobian
 
 The Body Jacobian transforms joint veocities into the body twist:
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/body-twist.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/body-twist.png)
 
 Here is a 5R Robot. The end effector frame is denoted as ${b^{\prime\prime}}$ since the frame is shifted twice due to the angle changes from the rotations of joints 4 and 5.
 
@@ -227,11 +227,11 @@ We can assign a measure ofjust how close the robot is to being singular accordin
 
 - The amount that the vector scaled
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/eigenvalue.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/eigenvalue.jpg)
 
 We can then use a single number to represent how close the ellipsoid is to singularity: **This is called Manipulabiliy**
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/manipulability.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/manipulability.jpg)
 
 It's more useful to visualize the manipulability ellipsoid using the 
 body Jacobian than the space Jacobian, since the body Jacobian measures 
@@ -260,5 +260,3 @@ As a Full Rank Jacobian approaches singular configuration, the following occurs 
 As a Full Rank Jacobian approaches singular configuration, the following occurs to the **force ellipsoid**
 
 - The length of one principal axis approaches infinity.
-
-- The interior volume of the ellipsoid approaches infinity.

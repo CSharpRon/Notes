@@ -49,9 +49,7 @@ keywords:
 > Calculate the Forward Kinematics of the robot: I.e., 
 > $Find \newline T(\theta)$
 
-<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/2020-06-02-13-40-38-image.png" alt="" data-align="center">
-
-### Representing Forward Kinematics in the {s} Frame
+<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/end-effector.png" alt="" data-align="center"><img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/end-effector.png" alt="" data-align="center">
 
 **Procedure:**
 
@@ -102,7 +100,7 @@ v
      
      The linear velocity v can be found by identifying which axis is tangental to the turntable created at the center of the joint n and then multiplying that number with the distance that the joint is from the origin of the {s} frame. 
    
-   - ![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/linear-velocity.jpg)
+   - ![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/linear-velocity.png)
 
 3. Given $\theta$, calculate the product of exponentials (PoE) formula in the space frame:
    
@@ -112,9 +110,7 @@ v
 
 Given a 4 joint RRRP Robot Arm, find the Forward Kinematics:
 
-![](x-special/nautilus-clipboard%20copy%20file:///home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/4RRRP.png)
-
-<u>1st, Find M:</u>
+<img src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/4RRRP.png" title="" alt="" data-align="center">
 
 $$
 M = 
@@ -214,7 +210,7 @@ v
 
 Given a URRPR spatial open chain robot, determin the screw axis $\beta_i$ in {b} when the robot is in its zero position. **L = 1.**
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/URRPR.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/URRPR.png)
 
 <u>1st, Find M:</u>
 

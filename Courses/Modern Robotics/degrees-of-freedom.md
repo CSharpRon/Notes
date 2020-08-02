@@ -54,7 +54,7 @@ We have two ways to find the DoF:
 
 Really, these two equations are the same thing, just using differing defintions. Now, let's apply this formula for a basic example. Consider a normal 3D rectangle in space:
 
-<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/rectangle.png" alt="" data-align="center">
+<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/rectangle.png" alt="" data-align="center">
 
 To begin, we first pick an arbitrary point called Point A. Since we have not defined any other constraints, it is free to move along any of the 3 axes (x, y, and z). Therefore, that point is said to have *3 freedoms.*
 
@@ -90,7 +90,7 @@ Therefore, the DoF of this rectangle is 6.
 
 ## Commonly Used Joints
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/0fa875b341053c5769a93f0e623f9bbd.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/0fa875b341053c5769a93f0e623f9bbd.jpg)
 
 ## Grubler's Formula
 
@@ -112,7 +112,7 @@ Assuming all constraints are independent, Grubler's Formula is:
 
 ## Applying Grubler's Formula
 
-<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/fc92e9a7b00e2517dbbd5340c6fec3e6.jpg" alt="" width="150">
+<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/fc92e9a7b00e2517dbbd5340c6fec3e6.jpg" alt="" width="150">
 
 Problem: Use Grubler's Formula to calculate the DoF of a Stewart Platform.
 
@@ -138,7 +138,7 @@ $DoF = 6$
 
 ## Calculating Constraints
 
-Consider a joint between two rigid bodies. Each rigid body has m degrees of freedom (m = 3 for a planar rigid body and m = 6 for a spatial rigid body) in the absence of any constraints. The joint has f degrees of freedom. How many constraints does the joint place on the motion of one rigid body relative to the other?
+
 
 From proposition 2.2 in the book:
 

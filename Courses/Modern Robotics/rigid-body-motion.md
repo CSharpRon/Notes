@@ -22,7 +22,7 @@ keywords:
 
 Since we are focused on rigid bodies, we can represent them implicitly using **frames**. In three-dimensional kinematics, we use a frame which consists of an origin and orthogonal x, y, and z coordinate areas. Visualizing this frame is done with the **right-hand rule**:
 
-![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/moden-robotics/a4c35dde45cca2a6b36e89d36f8fba65.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/a4c35dde45cca2a6b36e89d36f8fba65.jpg)
 
 When the frame is stationary, we can use it as a point of reference. This is known as the **space frame** and often appears as:
 
