@@ -1,5 +1,7 @@
 ---
 title: "Velocity Kinematics"
+section: 5.1
+
 keywords:
   - Open-Chain
   - Velocity
@@ -7,8 +9,7 @@ keywords:
   - End-Effector
   - Jacobian
   - Robotics
-...
-# Chapter 5: Velocity, Kinematics, and Statics
+---
 
 ## Terms
 
@@ -22,7 +23,7 @@ keywords:
 
 **Singularity**
 
-- Robot configurations where $J_1(\theta)$ and $J_2(\theta)$ will be co-linear, resulting in a singular matrix for the Jacobian $J(\theta)$
+- Robot configurations where $J_1(\theta)$ and $J_2(\theta)$ will be co-linear, resulting in a singular matrix for the Jacobian J(\theta)
 
 **Space Jacobian**
 
@@ -30,11 +31,11 @@ keywords:
 
 **Body Jacobian**
 
-- Jacobian in the end-effector (or body) frame coordinates 
+- Jacobian in the end-effector (or body) frame coordinates
 
 **End-Effector Velocity**
 
-- Also referred to as endpoint velocity ($v_{tip}$)
+- Also referred to as endpoint velocity (v_{tip})
 
 - Since the end effector can have any x, y, and theta value depending on its configuration, the time derivative of this vector will yield a Jacobian matrix that can be used to calculate the end-effector's $v_{tip}$
 
@@ -50,8 +51,8 @@ keywords:
 $$
 J(\theta) = 
 \begin{bmatrix}
-\dot{x}_{j1} & \dot{x}_{j2} & ... & \dot{x}_{jn} \\
-\dot{y}_{j1} & \dot{y}_{j2} & ... & \dot{y}_{jn} \\
+\dot{x}_{j1} & \dot{x}_{j2} & ... & \dot{x}_{jn} \cr
+\dot{y}_{j1} & \dot{y}_{j2} & ... & \dot{y}_{jn} \cr
 \dot{z}_{j1} & \dot{z}_{j2} & ... & \dot{z}_{jn}
 \end{bmatrix}
 $$
@@ -62,23 +63,23 @@ $$
 
 The joint velocities are typically graphed in a 2D grid, where the possible joint velocities are represented as a square in the $\dot{\theta_1}-\dot{\theta_2}$ space. 
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-26-16-20-21-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/joint-velocities.png)
 
 This set of values can then be passed to the Jacobian to return the parallelogram of **possible end-effector velocities.** :
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-26-16-20-12-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/end-effector-velocities.png)
 
 Note: Typically, the joint velocities are shown as a sphere. When they are, an ellipsoid appears to show the end-effector velocities instead of a parallelogram.
 
 - These ellipses are called **Manipulability Ellipsoids**
 
-- ![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-26-16-22-10-image.png)
+![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/manipulability-ellipsoid.png)
 
 ## Force Ellipsoids - Joint Torques
 
 You can also map the joint torques onto a 2D grid. When passed through the Jacobian, this will return the limits of the end-effector forces. 
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-26-16-36-10-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/modern-robotics/0f3c3717dba900bdd1bdde251abd326d.jpg)
 
 - The resulting ellipsoid is called the **force ellipsoid.**
 
@@ -116,7 +117,7 @@ $$
 
 Since the space jacobian is dependend on joints and angle rotations, we can derive the following example for a RRRP robot:
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-27-16-04-09-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/RRRP.png)
 
 Since the Jacobian is a matrix, we will need to fill in every ith column:
 
@@ -128,15 +129,13 @@ Since the Jacobian is a matrix, we will need to fill in every ith column:
 
 - The direction of $\omega_{s3}$ is always fixed in the $\hat{z}_s$ direction regardless of the values of $\theta_1$ and $\theta_2$, so $\omega_{s3} = (0,0,1).$ Choosing $q_3 = (L_1c_1 + L_2c_{12},L_1s_1 + L_2s_{12},0),$ where $c_{12} = cos(\theta_1 + \theta_2), s_{12} = sin(\theta_1 + \theta_2)$, it followsthat $v_{s3} = (L_1s_1 + L_2s_{12}, -L_1c_1 - L_2c_{12}, 0).$
 
-- Since the finl joint is prismatic, $\omega_{s4} = (0,0,0)$, and the joint-axis direction is given by $v_{s4} = (0,0,1)$, the Space Jaobian is therefore:
-
-- ![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-27-16-27-41-image.png)
+- ![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/space-jacobian.png)
 
 ## Body Jacobian
 
 The Body Jacobian transforms joint veocities into the body twist:
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-27-17-19-17-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/body-twist.png)
 
 Here is a 5R Robot. The end effector frame is denoted as ${b^{\prime\prime}}$ since the frame is shifted twice due to the angle changes from the rotations of joints 4 and 5.
 
@@ -228,11 +227,11 @@ We can assign a measure ofjust how close the robot is to being singular accordin
 
 - The amount that the vector scaled
 
-![](/home/ronald/Downloads/IMG_20200627_202620.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/eigenvalue.jpg)
 
 We can then use a single number to represent how close the ellipsoid is to singularity: **This is called Manipulabiliy**
 
-![](/home/ronald/Pictures/IMG_20200627_203419.jpg)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/manipulability.jpg)
 
 It's more useful to visualize the manipulability ellipsoid using the 
 body Jacobian than the space Jacobian, since the body Jacobian measures 
@@ -243,7 +242,7 @@ space frame. If the robot has nnn joints, then the body Jacobian $J_b$ is 6 x n.
 $$
 J_b = 
 \begin{bmatrix}
-J_{bw} \\
+J_{bw} \cr
 J_{bv} 
 \end{bmatrix}
 $$

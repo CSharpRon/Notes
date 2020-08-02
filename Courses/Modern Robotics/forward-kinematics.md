@@ -1,13 +1,14 @@
 ---
 title: "Forward Kinematics"
+section: 4.1
 keywords:
-  - Open-Chain
-  - Forward
-  - Kinematics
-  - End-Effector
-  - Robotics
-...
-# 4.1.1: Product of Exponentials Formula in the Space Frame
+
+- Open-Chain
+   - Forward
+   - Kinematics
+   - End-Effector
+   - Robotics
+---
 
 ## Terms:
 
@@ -37,8 +38,6 @@ keywords:
 
 - 6n numbers are needed to describe n screw axes
 
----
-
 ## Forward Kinematics
 
 - Forward kinematics refers to the use of the kinematic equations of a robot to compute the <u>position of the end-effector</u> from specified values for the joint parameters.
@@ -50,7 +49,7 @@ keywords:
 > Calculate the Forward Kinematics of the robot: I.e., 
 > $Find \newline T(\theta)$
 
-<img src="/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-02-13-40-38-image.png" title="" alt="" data-align="center">
+<img title="" src="https://raw.githubusercontent.com/CSharpRon/Notes/master/images/2020-06-02-13-40-38-image.png" alt="" data-align="center">
 
 ### Representing Forward Kinematics in the {s} Frame
 
@@ -67,9 +66,9 @@ keywords:
    $$
    M = 
 \begin{bmatrix}
-\hat{x_s} & \hat{x_s} & \hat{x_s} & \sum{L}_{x_s} \\
-\hat{y_s} & \hat{y_s} & \hat{y_s} & \sum{L}_{y_s} \\
-\hat{z_s} & \hat{z_s} & \hat{z_s} & \sum{L}_{z_s} \\
+\hat{x_s} & \hat{x_s} & \hat{x_s} & \sum{L}_{x_s} \cr
+\hat{y_s} & \hat{y_s} & \hat{y_s} & \sum{L}_{y_s} \cr
+\hat{z_s} & \hat{z_s} & \hat{z_s} & \sum{L}_{z_s} \cr
 0 & 0 & 0 & 1
 \end{bmatrix}
    $$
@@ -85,25 +84,25 @@ keywords:
    $$
    S_n = 
 \begin{bmatrix}
-\omega \\
+\omega \cr
 v
 \end{bmatrix}
 = 
 \begin{bmatrix}
-\hat{x_s} \\
-\hat{y_s} \\
-\hat{z_s} \\ \\
-\dot{x_s} \\
-\dot{y_s} \\
+\hat{x_s} \cr
+\hat{y_s} \cr
+\hat{z_s} \cr \cr
+\dot{x_s} \cr
+\dot{y_s} \cr
 \dot{z_s}
 \end{bmatrix}
    $$
    
    - The first 3-vector (angular velocity) represents which axis the space frame {s} is rotating about. For example, a value of $[0,0,1]^T$ means that this joint in the {s} frame is rotating about the positive z-axis
+     
+     The linear velocity v can be found by identifying which axis is tangental to the turntable created at the center of the joint n and then multiplying that number with the distance that the joint is from the origin of the {s} frame. 
    
-   - The linear velocity v can be found by identifying which axis is tangental to the turntable created at the center of the joint n and then multiplying that number with the distance that the joint is from the origin of the {s} frame. 
-   
-   - ![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-03-21-39-12-image.png)
+   - ![](https://raw.githubusercontent.com/CSharpRon/Notes/master/images/linear-velocity.jpg)
 
 3. Given $\theta$, calculate the product of exponentials (PoE) formula in the space frame:
    
@@ -113,16 +112,16 @@ v
 
 Given a 4 joint RRRP Robot Arm, find the Forward Kinematics:
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-03-20-28-33-image.png)
+![](x-special/nautilus-clipboard%20copy%20file:///home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/4RRRP.png)
 
 <u>1st, Find M:</u>
 
 $$
 M = 
 \begin{bmatrix}
-    0 & -1 & 0 & 19 \\
-    -1 & 0 & 0 & 0 \\
-    0 & 0 & -1 & -3 \\
+    0 & -1 & 0 & 19 \cr
+    -1 & 0 & 0 & 0 \cr
+    0 & 0 & -1 & -3 \cr
     0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -132,27 +131,27 @@ $$
 $$
 S_1 = 
 \begin{bmatrix}
-    0 \\
-    0 \\
-    1 \\ \\
-    0 \\
-    0 \\
-    0 \\
+    0 \cr
+    0 \cr
+    1 \cr \cr
+    0 \cr
+    0 \cr
+    0 \cr
 \end{bmatrix}, 
 S_2 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 1 \\ \\
-    0 \\ -10 \\ 0 
+    0 \cr 0 \cr 1 \cr \cr
+    0 \cr -10 \cr 0 
 \end{bmatrix},
 S_3 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 1 \\ \\
-    0 \\ -19 \\ 0
+    0 \cr 0 \cr 1 \cr \cr
+    0 \cr -19 \cr 0
 \end{bmatrix},
 S_4 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 0 \\ \\ 
-    0 \\ 0 \\ 1
+    0 \cr 0 \cr 0 \cr \cr 
+    0 \cr 0 \cr 1
 \end{bmatrix}
 $$
 
@@ -177,9 +176,9 @@ We now have the elements necessary to calculate the forward kinematic of the rob
    $$
    M = 
 \begin{bmatrix}
-\hat{x_s} & \hat{x_s} & \hat{x_s} & \sum{L}_{x_s} \\
-\hat{y_s} & \hat{y_s} & \hat{y_s} & \sum{L}_{y_s} \\
-\hat{z_s} & \hat{z_s} & \hat{z_s} & \sum{L}_{z_s} \\
+\hat{x_s} & \hat{x_s} & \hat{x_s} & \sum{L}_{x_s} \cr
+\hat{y_s} & \hat{y_s} & \hat{y_s} & \sum{L}_{y_s} \cr
+\hat{z_s} & \hat{z_s} & \hat{z_s} & \sum{L}_{z_s} \cr
 0 & 0 & 0 & 1
 \end{bmatrix}
    $$
@@ -189,16 +188,16 @@ We now have the elements necessary to calculate the forward kinematic of the rob
    $$
    \beta_n = 
 \begin{bmatrix}
-\omega \\
+\omega \cr
 v
 \end{bmatrix}
 = 
 \begin{bmatrix}
-\hat{x_b} \\
-\hat{y_b} \\
-\hat{z_b} \\ \\
-\dot{x_b} \\
-\dot{y_b} \\
+\hat{x_b} \cr
+\hat{y_b} \cr
+\hat{z_b} \cr \cr
+\dot{x_b} \cr
+\dot{y_b} \cr
 \dot{z_b}
 \end{bmatrix}
    $$
@@ -215,16 +214,16 @@ v
 
 Given a URRPR spatial open chain robot, determin the screw axis $\beta_i$ in {b} when the robot is in its zero position. **L = 1.**
 
-![](/home/ronald/.var/app/com.github.marktext.marktext/config/marktext/images/2020-06-06-13-11-13-image.png)
+![](https://raw.githubusercontent.com/CSharpRon/Notes/images/modern-robotics/URRPR.png)
 
 <u>1st, Find M:</u>
 
 $$
 M = 
 \begin{bmatrix}
-    1 & 0 & 0 & 3.73 \\
-    0 & 1 & 0 & 0 \\
-    0 & 0 & 1 & 2.73 \\
+    1 & 0 & 0 & 3.73 \cr
+    0 & 1 & 0 & 0 \cr
+    0 & 0 & 1 & 2.73 \cr
     0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -234,33 +233,33 @@ $$
 $$
 \beta_1 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 1 \\ \\
-    0 \\ 2.73 \\ 0 \\
+    0 \cr 0 \cr 1 \cr \cr
+    0 \cr 2.73 \cr 0 \cr
 \end{bmatrix}, 
 \beta_2 = 
 \begin{bmatrix}
-    0 \\ 1 \\ 0 \\ \\
-    2.73 \\ 0 \\ -2.73 
+    0 \cr 1 \cr 0 \cr \cr
+    2.73 \cr 0 \cr -2.73 
 \end{bmatrix},
 \beta_3 = 
 \begin{bmatrix}
-    0 \\ 1 \\ 0 \\ \\
-    3.73 \\ 0 \\ -1
+    0 \cr 1 \cr 0 \cr \cr
+    3.73 \cr 0 \cr -1
 \end{bmatrix},
 \beta_4 = 
 \begin{bmatrix}
-    0 \\ 1 \\ 0 \\ \\ 
-    2 \\ 0 \\ 0
+    0 \cr 1 \cr 0 \cr \cr 
+    2 \cr 0 \cr 0
 \end{bmatrix}
 \beta_5 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 0 \\ \\ 
-    0 \\ 0 \\ 1
+    0 \cr 0 \cr 0 \cr \cr 
+    0 \cr 0 \cr 1
 \end{bmatrix}
 \beta_6 = 
 \begin{bmatrix}
-    0 \\ 0 \\ 1 \\ \\ 
-    0 \\ 0 \\ 0
+    0 \cr 0 \cr 1 \cr \cr 
+    0 \cr 0 \cr 0
 \end{bmatrix}
 $$
 
