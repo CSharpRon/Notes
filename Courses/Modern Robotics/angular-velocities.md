@@ -97,3 +97,5 @@ The ordering is very important as is the subscript ordering. Here are the rules 
 ## Exponential Coordinates Representation of Rotation
 
 The last thing we are going to focus on is a three-parameter representation for rotations, known as the **exponential coordinates for rotation**. What's
+
+![](/home/ronald/Pictures/MarkText/2020-08-02-21-44-21-image.png)
