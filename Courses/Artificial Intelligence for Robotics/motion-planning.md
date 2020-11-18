@@ -1,8 +1,8 @@
 ---
-modified: 2020-11-18T09:45:46-05:00
+modified: 2020-11-18T09:45:50-05:00
 ---
 
-# # Expansion.
+# # Expansion
 
 Given the following:
 
