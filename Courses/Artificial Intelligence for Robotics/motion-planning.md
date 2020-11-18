@@ -1,28 +1,8 @@
 ---
-title: "Motion Planning and Search"
-keywords:
-  - A*
-  - Motion Planning
-  - Heuristic
-  - Robotics
-...
-# Motion Planning and Search
-
-## Terms
-
-**Motion Planning** - The action of finding the path a robot needs to take to navigate to a target location.
-
-**Minimum Cost Path** - The path with the least total cost from start to goal. Note that the minimum cost path may not be the "shortest" cost. A path that prioritizes right turns may have a lower cost than a path that consists of left turns.
-
-**A* Algorithm** - A cost analysis algorithm which uses a heuristic function to limit the expansions performed on the movement grid to find the minimum cost path. As a result, not all nodes need to be traversed to find a minimum cost path.
-
-**Dynamic Programming Algorithm** - A cost analysis algorithm which traverses through each cell in the grid and stores the mimum cost of traversal starting at any cell. This approach does not depend on the starting location. 
-
-**Policy** - A grid consisting of the optimal motion a car in each cell should take in order to reach the goal.
-
+modified: 2020-11-18T09:45:46-05:00
 ---
 
-## Expansion
+# # Expansion.
 
 Given the following:
 
